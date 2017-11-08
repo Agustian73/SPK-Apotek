@@ -1,2 +1,2 @@
 # SPK-Apotek
-SPK metode Regresi Linier
+SPK metode Regresi Linier dengan java
