@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="lap_peramalan" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d18b40fa-eb3c-437a-96ad-fc9cd9d0b83d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM persediaan, peramalan WHERE peramalan.kd_barang=persediaan.kd_barang]]>
+	</queryString>
+	<field name="kd_ramal" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="periode" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kd_barang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nm_barang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="satuan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hasil" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_ramal" class="java.util.Date"/>
+	<variable name="total_1" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="74" splitType="Stretch">
+			<image>
+				<reportElement uuid="ddf6de5c-c1a3-42cd-8080-1fd22d09e1aa" x="3" y="2" width="77" height="71"/>
+				<imageExpression><![CDATA["gambar/logo-apotik.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement uuid="5122886b-3bb0-4c5e-95d2-2153b2408cb2" x="57" y="22" width="100" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{periode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="e46414aa-8509-4f0c-bffc-292465d29d3b" x="396" y="18" width="77" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Diramal tgl :]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="8a53d604-859e-4700-a588-3a42ca180856" x="476" y="18" width="78" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tgl_ramal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<line>
+				<reportElement uuid="8ff2e4bd-d020-4f5d-87ce-0a9598c1f892" x="0" y="26" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="d1988d33-0122-4605-b722-a3730a3069e6" x="0" y="2" width="554" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="2d6924a4-3a19-4e19-99cd-e4f5aab69caf" x="3" y="-22" width="54" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Periode :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c8683f52-7914-44a1-a4d4-86d126cc97ab" x="177" y="-113" width="200" height="21"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APOTEK BOJONG SEHAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="52044aa9-f6f3-49b6-a386-eab203ca073b" x="178" y="-93" width="200" height="21"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kabupaten Pekalongan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="feb95f35-5c7a-45b9-9536-52d6aa97e405" x="80" y="-71" width="388" height="21"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Alamat : Jalan KH. MANSHUR No. 202 Bojong]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dad6897a-f9eb-4c6c-a509-a40167730806" x="181" y="-30" width="200" height="21"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Peramalan Obat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="66ff1262-65e8-4dfc-a860-b2fc776fefc3" x="2" y="4" width="66" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e3073960-ab17-40e3-9895-ce1373b6edd5" x="67" y="3" width="111" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kd Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d26d5273-1cd7-4d83-aa7f-45468830ac2d" x="178" y="4" width="206" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ef4718e7-e505-4a5e-abad-30918712f3f5" x="384" y="6" width="106" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Satuan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a0cec642-48b4-4593-ab73-216dab6e6562" x="490" y="3" width="65" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[hasil]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<line>
+				<reportElement uuid="61313919-e436-43d4-a61c-026c30c120d4" x="0" y="24" width="555" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="bbe2bc98-8951-438b-8ee5-d7ae8fb22d45" x="2" y="4" width="66" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kd_ramal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="bc3a0dfe-62ce-4523-996d-dc6b62aaf6b6" x="66" y="5" width="111" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kd_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9aa3ac63-ff52-481b-b3b4-62b49d40b02d" x="235" y="5" width="149" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nm_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6c22bf8e-1e92-44c0-adb1-7a617d566adb" x="384" y="3" width="106" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{satuan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="99ca989b-2c8a-4c39-87d5-63ce3d051b4b" x="490" y="2" width="65" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hasil}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="1" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="1" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="52" splitType="Stretch">
+			<elementGroup/>
+		</band>
+	</summary>
+</jasperReport>
